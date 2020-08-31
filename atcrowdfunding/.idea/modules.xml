@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/atcrowdfunding-manager-api/atcrowdfunding-manager-api.iml" filepath="$PROJECT_DIR$/atcrowdfunding-manager-api/atcrowdfunding-manager-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/atcrowdfunding-manager-impl/atcrowdfunding-manager-impl.iml" filepath="$PROJECT_DIR$/atcrowdfunding-manager-impl/atcrowdfunding-manager-impl.iml" />
       <module fileurl="file://$PROJECT_DIR$/atcrowdfunding-parent/atcrowdfunding-parent.iml" filepath="$PROJECT_DIR$/atcrowdfunding-parent/atcrowdfunding-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootsrap/bootsrap.iml" filepath="$PROJECT_DIR$/bootsrap/bootsrap.iml" />
     </modules>
   </component>
 </project>
