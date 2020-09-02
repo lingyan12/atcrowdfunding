@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -35,12 +36,19 @@
 
     <form id="loginForm" class="form-signin" role="form" action="dologin" method="post">
         <h2 class="form-signin-heading"><i class="glyphicon glyphicon-log-in"></i> 用户登录</h2>
+        <c:if test="${not empty message}">
         <div class="form-group has-success has-feedback">
+            ${message }1111111
+        </div>
+        </c:if>
+        <div class="form-group has-success has-feedback">
+            %{message}
             <input type="text" class="form-control" id="loginacct" name="loginacct" placeholder="请输入登录账号" autofocus>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
         </div>
         <div class="form-group has-success has-feedback">
-            <input type="text" class="form-control" id="userpwd" name="userpwd" placeholder="请输入登录密码" style="margin-top:10px;">
+            <input type="password" class="form-control" id="userpwd" name="userpwd" placeholder="请输入登录密码" style="margin-top:10px;">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
 

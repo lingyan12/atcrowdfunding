@@ -139,7 +139,7 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active" onclick="window.location.href='project.html'" style="cursor:pointer;">
-            <img src="img/carousel-1.jpg" alt="First slide">
+            <img src="${PATH}/static/img/carousel-1.jpg" alt="First slide">
         </div>
         <div class="item" onclick="window.location.href='project.html'" style="cursor:pointer;">
             <img src="img/carousel-2.jpg" alt="Second slide">
@@ -542,7 +542,7 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="thumbnail">
-                                    <img alt="300x200" src="img/product-2.gif" />
+                                    <img alt="300x200" src="${pageContext.request.contextPath}/static/img/product-2.gif" />
                                     <div class="caption">
                                         <h3 class="break">
                                             <a href="project.html">酷驰触控龙头，智享厨房黑科技</a>

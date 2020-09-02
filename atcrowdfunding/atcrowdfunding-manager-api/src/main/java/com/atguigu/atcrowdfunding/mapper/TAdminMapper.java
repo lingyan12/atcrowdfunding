@@ -5,6 +5,8 @@ import com.atguigu.atcrowdfunding.bean.TAdminExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
+
+
 public interface TAdminMapper {
     long countByExample(TAdminExample example);
 

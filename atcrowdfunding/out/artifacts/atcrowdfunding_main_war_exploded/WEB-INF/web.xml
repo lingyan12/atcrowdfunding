@@ -17,6 +17,10 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+    
+    <listener>
+        <listener-class>com.atguigu.atcrowdfunding.listener.SystemUpInitListener</listener-class>
+    </listener>
 
 
     <!-- 字符编码过滤器 -->
@@ -73,6 +77,7 @@
     <welcome-file-list>
         <welcome-file>welcome.jsp</welcome-file>
     </welcome-file-list>
+
 
 
 
