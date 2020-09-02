@@ -9,6 +9,8 @@ import com.atguigu.atcrowdfunding.util.Const;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.atguigu.atcrowdfunding.exception.LoginException ;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

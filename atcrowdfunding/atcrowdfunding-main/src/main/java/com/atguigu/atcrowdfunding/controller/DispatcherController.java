@@ -5,6 +5,7 @@ package com.atguigu.atcrowdfunding.controller;
 
 
 
+import com.atguigu.atcrowdfunding.service.TAdminService;
 import com.atguigu.atcrowdfunding.service.impl.TAdminServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,8 +24,8 @@ public class DispatcherController {
     Logger log = LoggerFactory.getLogger(DispatcherController.class);
 //
 
-//    @Autowired
-//    TAdminServiceImpl adminService;
+    @Autowired
+    TAdminService adminService;
 
 
 
@@ -54,8 +55,10 @@ public String login(){
         map.put("userpwd",userpwd);
 
         try {
+            TAdminServiceImpl tAdminService = new TAdminServiceImpl();
 //            TAdmin admin = adminService.getTAdminByLogin(map);
 //            session.setAttribute(Const.LOGIN_ADMIN ,admin );
+            log.debug("进入try");
         return "main";
 
         } catch (Exception e) {
