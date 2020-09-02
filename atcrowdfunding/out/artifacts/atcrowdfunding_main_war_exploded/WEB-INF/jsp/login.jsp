@@ -42,7 +42,7 @@
         </div>
         </c:if>
         <div class="form-group has-success has-feedback">
-            %{message}
+
             <input type="text" class="form-control" id="loginacct" name="loginacct" placeholder="请输入登录账号" autofocus>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
