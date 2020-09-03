@@ -1,16 +1,15 @@
 package com.atguigu.atcrowdfunding.service.impl;
+
 import com.atguigu.atcrowdfunding.bean.TAdmin;
 import com.atguigu.atcrowdfunding.bean.TAdminExample;
 import com.atguigu.atcrowdfunding.mapper.TAdminMapper;
-
-
 import com.atguigu.atcrowdfunding.service.TAdminService;
 import com.atguigu.atcrowdfunding.util.Const;
-import org.springframework.beans.factory.annotation.Autowired;
+
 
 import com.atguigu.atcrowdfunding.exception.LoginException ;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -18,8 +17,9 @@ import java.util.List;
 
 @Service
 public class TAdminServiceImpl implements TAdminService {
+
     @Autowired
-    TAdminMapper adminMapper;
+    TAdminMapper tAdminMapper;
 
     @Override
     public TAdmin getTAdminByLogin(HashMap<String, Object> map) throws LoginException {
@@ -34,7 +34,7 @@ public class TAdminServiceImpl implements TAdminService {
         TAdminExample ex = new TAdminExample(); //创建一个 条件查询的example对象
         ex.createCriteria().andLoginacctEqualTo(loginacct);
 
-        List<TAdmin> list = adminMapper.selectByExample(ex);
+        List<TAdmin> list = tAdminMapper.selectByExample(ex);
 
 
 

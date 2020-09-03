@@ -5,8 +5,13 @@ package com.atguigu.atcrowdfunding.controller;
 
 
 
+
+
+
+import com.atguigu.atcrowdfunding.bean.TAdmin;
 import com.atguigu.atcrowdfunding.service.TAdminService;
 import com.atguigu.atcrowdfunding.service.impl.TAdminServiceImpl;
+import com.atguigu.atcrowdfunding.util.Const;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -55,9 +60,9 @@ public String login(){
         map.put("userpwd",userpwd);
 
         try {
-            TAdminServiceImpl tAdminService = new TAdminServiceImpl();
-//            TAdmin admin = adminService.getTAdminByLogin(map);
-//            session.setAttribute(Const.LOGIN_ADMIN ,admin );
+//            TAdminServiceImpl adminService = new TAdminServiceImpl();
+            TAdmin admin = adminService.getTAdminByLogin(map);
+            session.setAttribute(Const.LOGIN_ADMIN ,admin );
             log.debug("进入try");
         return "main";
 

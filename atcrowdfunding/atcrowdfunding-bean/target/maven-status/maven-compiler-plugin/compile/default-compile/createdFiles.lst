@@ -506,6 +506,7 @@ com\atguigu\atcrowdfunding\bean\XProcesslist.class
 com\atguigu\atcrowdfunding\bean\XInnodbBufferStatsByTableWithBLOBs.class
 com\atguigu\atcrowdfunding\bean\VariablesInfo.class
 com\atguigu\atcrowdfunding\bean\XIoGlobalByFileByBytes.class
+com\atguigu\atcrowdfunding\bean\InnodbTableStats.class
 com\atguigu\atcrowdfunding\bean\OptimizerTraceExample$GeneratedCriteria.class
 com\atguigu\atcrowdfunding\bean\XSchemaIndexStatisticsExample$GeneratedCriteria.class
 com\atguigu\atcrowdfunding\bean\EventsTransactionsSummaryByThreadByEventNameExample$GeneratedCriteria.class
@@ -1318,7 +1319,6 @@ com\atguigu\atcrowdfunding\bean\XWaitsByHostByLatencyExample.class
 com\atguigu\atcrowdfunding\bean\XMemoryByUserByCurrentBytes.class
 com\atguigu\atcrowdfunding\bean\GlobalGrantsExample$GeneratedCriteria.class
 com\atguigu\atcrowdfunding\bean\SessionExample$Criteria.class
-com\atguigu\atcrowdfunding\bean\InnodbTablestats.class
 com\atguigu\atcrowdfunding\bean\MemorySummaryByUserByEventName.class
 com\atguigu\atcrowdfunding\bean\SocketSummaryByInstanceExample$Criterion.class
 com\atguigu\atcrowdfunding\bean\UserSummaryByFileIoType.class

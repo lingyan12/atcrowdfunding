@@ -23,7 +23,7 @@
 
 	<!-- 映射dao接口，实现dao接口，并放入容器 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.atguigu.atcrowdfunding.dao"></property>
+		<property name="basePackage" value="com.atguigu.atcrowdfunding.mapper"></property>
 	</bean>
 
 
