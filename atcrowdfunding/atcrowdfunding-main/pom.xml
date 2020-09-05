@@ -42,6 +42,12 @@
           <artifactId>jul-to-slf4j</artifactId><!-- 替换java.util.logging-->
 <!--          <version>1.7.25</version>-->
       </dependency>
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter</artifactId>
+          <version>RELEASE</version>
+          <scope>compile</scope>
+      </dependency>
 
 <!--    <dependency>-->
 <!--      <groupId>log4j</groupId>-->
