@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.portlet.bind.annotation.ResourceMapping;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -29,14 +31,21 @@ public class TAdminController {
     @RequestMapping("/admin/index")
     public String index(@RequestParam(value = "pageNum" , required = false , defaultValue = "1") Integer pageNum ,
                         @RequestParam(value = "pageSize" , required = false , defaultValue = "2") Integer pageSize ,
-                        Model model ){
+                        Model model,
+                        @RequestParam(value = "condition" , required = false , defaultValue = "") String condition ){
     log.debug("进入到/admin/index请求的servlet中");
 
-        System.err.println(pageNum);
+    log.debug("condition:-----: {}",condition);
+    log.debug("pageNum:-----: {}",pageNum);
+    log.debug("pageSize:-----: {}",pageSize);
+    System.err.println("condition:-----: "+ condition);
+
+    System.err.println(pageNum);
 
     PageHelper.startPage(pageNum,pageSize);
 
     Map<String , Object> paramMap = new HashMap<>();
+    paramMap.put("condition" , condition);
 
     PageInfo<TAdmin> page = adminService.listAdminPage(paramMap);
         System.err.println("正在打印page");
@@ -104,6 +113,35 @@ public class TAdminController {
         System.err.println("------pageNum: "+pageNum);
 
         adminService.delTAdmin(id);
+
+
+
+        return "redirect:/admin/index?pageNum="+pageNum;
+    }
+
+
+
+    @RequestMapping("/admin/doDeleteBatch")
+    public String doDeleteBatch(Integer pageNum ,  String ids ){ //ids = 1,2,3,4,5
+        System.err.println("ids---------------------------"+ids);
+        log.debug("进入/admin/doDeleteBatch");
+        List<Integer> idList = new ArrayList<>();
+
+        String[] split = ids.split(",");
+
+
+            for (String s : split) {
+                int i = Integer.parseInt(s);
+                System.err.println(i);
+                idList.add(i);
+            }
+
+        adminService.deleteBatch(idList);
+
+
+        System.err.println("------ids: "+ids);
+//        System.err.println("------pageNum: "+pageNum);
+
 
 
 

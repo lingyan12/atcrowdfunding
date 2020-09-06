@@ -87,13 +87,26 @@ public String login(){
     @RequestMapping("/main")
     public String main(HttpSession session){
         log.debug("跳转到后台系统的main页面");
+        //先取session 如果session不存在 直接跳转到登录
+        if (session == null){
+            return "redirect:/login";
+        }
+        //从session域中取menuList
+        List<TMenu>menuList = (List<TMenu>)session.getAttribute("menulist");
+
+        //如果 null 就查一次数据库
+        if (menuList == null){
+
+        List<TMenu> menulist = menuService.listMenuAll();
+        session.setAttribute("menulist" , menulist);
+        System.err.println("查找数据库取得menuList");
+        System.err.println("------------------------------------------------------------");
+        }
 
         //存放父菜单
-    List<TMenu> menulist = menuService.listMenuAll();
-    session.setAttribute("menulist" , menulist);
-        System.err.println(menulist);
+        //如果session中有menulist  就不用查数据库
+        System.err.println("如果session中有menulist  就不用查数据库");
         System.err.println("------------------------------------------------------------");
-
 
         return "main";
     }

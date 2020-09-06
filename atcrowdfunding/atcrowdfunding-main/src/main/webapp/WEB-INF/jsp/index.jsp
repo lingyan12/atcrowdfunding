@@ -14,7 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    welcome.jsp
 <%--    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">--%>
 <%--    <link rel="stylesheet" href="/atcrowdfunding_main_war_exploded/static/bootstrap/css/bootstrap.min.css">--%>
 <%--&lt;%&ndash;    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.min.css">&ndash;%&gt;--%>

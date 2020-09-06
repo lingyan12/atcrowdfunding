@@ -79,9 +79,23 @@
         //     window.location.href = "index.html";
         // }
 
+        let loginacct = $("#loginacct").val()
+        let userpwd = $("#userpwd").val()
+
+        if ($.trim(loginacct) == ""){
+
+            layer.msg("用户名不能为空",{time:2000,icon:5})
+            return  false
+        }
+
+        if ($.trim(userpwd).length < 3 ){
+            layer.msg("密码位数不能小于3",{time:2000,icon:5})
+            return  false
+        }
+
+
+
         $("#loginForm").submit()
-
-
     }
 </script>
 </body>

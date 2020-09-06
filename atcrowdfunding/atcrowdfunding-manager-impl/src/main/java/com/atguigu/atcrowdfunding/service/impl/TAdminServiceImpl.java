@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -91,7 +92,21 @@ public class TAdminServiceImpl implements TAdminService {
     @Override
     public PageInfo<TAdmin> listAdminPage(Map<String, Object> paramMap) {
 
+        String condition = (String) paramMap.get("condition");
+
         TAdminExample example = new TAdminExample();
+
+        if(!"".equals(condition)){
+            example.createCriteria().andLoginacctLike("%"+condition+"%");
+            TAdminExample.Criteria criteria2 = example.createCriteria();
+            criteria2.andUsernameLike("%"+condition+"%");
+
+            TAdminExample.Criteria criteria3 = example.createCriteria();
+            criteria3.andEmailLike("%"+condition+"%");
+            example.or(criteria2);
+            example.or(criteria3);
+
+        }
 
         List<TAdmin> list = adminMapper.selectByExample(example);
 
@@ -133,6 +148,12 @@ public class TAdminServiceImpl implements TAdminService {
 
         adminMapper.deleteByPrimaryKey(id);
 
+    }
+
+    @Override
+    public void deleteBatch(List<Integer> idList) {
+
+        adminMapper.deleteBatch(idList);
     }
 
 
