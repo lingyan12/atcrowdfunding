@@ -54,7 +54,7 @@
                         <button id="queryBtn" type="button" class="btn btn-warning"><i class="glyphicon glyphicon-search"></i> 查询</button>
                     </form>
                     <button type="button" class="btn btn-danger" style="float:right;margin-left:10px;"><i class=" glyphicon glyphicon-remove"></i> 删除</button>
-                    <button type="button" class="btn btn-primary" style="float:right;" onclick="window.location.href='form.html'"><i class="glyphicon glyphicon-plus"></i> 新增</button>
+                    <button id="addBtn" type="button" class="btn btn-primary" style="float:right;" ><i class="glyphicon glyphicon-plus"></i> 新增</button>
                     <br>
                     <hr style="clear:both;">
                     <div class="table-responsive">
@@ -88,6 +88,53 @@
         </div>
     </div>
 </div>
+
+
+
+
+<!-- Modal  添加模态框-->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">添加角色</h4>
+            </div>
+
+
+
+            <div class="modal-body">
+                    <div class="form-group">
+                        <label for="name">角色名称</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="请输入登陆账号">
+                    </div>
+
+
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" id="saveBtn" class="btn btn-primary">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <%@include file="/WEB-INF/jsp/js.jsp"%>
@@ -155,7 +202,7 @@ content+= '  <td><input type="checkbox"></td>';
 content+= '  <td>'+obj.name +'</td>';
 content+= '  <td>';
 content+= '	  <button type="button" class="btn btn-success btn-xs"><i class=" glyphicon glyphicon-check"></i></button>';
-content+= '	  <button type="button" class="btn btn-primary btn-xs"><i class=" glyphicon glyphicon-pencil"></i></button>';
+content+= '	  <button type="button" roleId="'+ obj.id+'" class="updateClass btn btn-primary btn-xs"><i class=" glyphicon glyphicon-pencil"></i></button>';
 content+= '	  <button type="button" class="btn btn-danger btn-xs"><i class=" glyphicon glyphicon-remove"></i></button>';
 content+= '  </td>';
 content+= '</tr>';
@@ -212,6 +259,82 @@ content+= '</tr>';
     $("tbody .btn-success").click(function(){
         window.location.href = "assignPermission.html";
     });
+
+
+       //添加 开始=====
+
+    $("#addBtn").click(function (){
+        console.log("ji纳入addBtn")
+        $("#addModal").modal(
+            {show: true ,
+            backdrop:"static",
+            keyboard:false
+            })
+    })
+
+    $("#saveBtn").click(function (){
+
+        let name = $("#addModal input[name='name']").val();
+
+        $.ajax({
+            type: "post",
+            url:"${PATH}/role/doAdd",
+            data:{name:name},
+            beforeSend:function (){
+                return true
+            },
+            success:function (result){
+                if ("ok" == result) {
+                    layer.msg("保存成功",{time:1000},function(){
+                        $("#addBtn").modal('hide')
+                        $("#addModal input[name='name']").val('')
+
+                    })
+
+                } else {
+                    layer.msg("保存失败")
+                }
+            }
+
+
+
+
+        })
+
+    })
+
+
+
+
+    //添加结束========
+
+
+
+    //修改开始=========
+
+    //由于 updateClass属于后来添加的元素  所以 click函数不起作用  可用下列函数代替
+    // $(".updateClass").click(function (){
+    //     alert("updateClass")
+    // })
+
+    $("tbody").on("click" , ".updateClass" , function (){
+
+        // let roleId = this.roleId  该方法错误 因为this 是一个DOM对象 DOM对象无法取出自定义属性
+
+        let roleId = $(this).attr("roleId")
+        alert(roleId)
+
+    })
+
+
+
+    //修改结束==========
+
+
+
+
+
+
 </script>
 </body>
 </html>

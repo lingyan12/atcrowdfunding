@@ -65,6 +65,17 @@ public class TRoleController {
     }
 
 
+    @ResponseBody
+    @RequestMapping("/role/doAdd")
+    public String doAdd(TRole role){
+
+        roleService.saveTRole(role);
+
+
+        return "ok";
+    }
+
+
 
 
 }

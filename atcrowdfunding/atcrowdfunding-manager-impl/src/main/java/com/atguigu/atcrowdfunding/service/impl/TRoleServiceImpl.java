@@ -44,4 +44,9 @@ public class TRoleServiceImpl implements TRoleService {
 
         return page;
     }
+
+    @Override
+    public void saveTRole(TRole role) {
+        roleMapper.insertSelective(role);
+    }
 }

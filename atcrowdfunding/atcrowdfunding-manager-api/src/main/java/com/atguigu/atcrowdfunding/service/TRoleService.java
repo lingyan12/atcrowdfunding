@@ -7,4 +7,6 @@ import java.util.Map;
 
 public interface TRoleService {
     PageInfo<TRole> listRolePage(Map<String ,Object> map);
+
+    void saveTRole(TRole role);
 }
