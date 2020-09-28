@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="scw-user" />
+        <module name="scw-project" />
+        <module name="scw-common" />
+        <module name="scw-order" />
+        <module name="scw-webui" />
+        <module name="scw-regist" />
+        <module name="forwardandredirect" />
+        <module name="spring-session-stu" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="forwardandredirect" target="1.8" />
+      <module name="scw-common" target="1.8" />
+      <module name="scw-common (1)" target="1.8" />
+      <module name="scw-order" target="1.8" />
+      <module name="scw-parent" target="1.8" />
+      <module name="scw-project" target="1.8" />
+      <module name="scw-regist" target="1.8" />
+      <module name="scw-user" target="1.8" />
+      <module name="scw-webui" target="1.8" />
+      <module name="spring-session-stu" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="forwardandredirect" options="-parameters" />
+      <module name="scw-order" options="-parameters" />
+      <module name="scw-project" options="-parameters" />
+      <module name="scw-regist" options="-parameters" />
+      <module name="scw-user" options="-parameters" />
+      <module name="scw-webui" options="-parameters" />
+      <module name="spring-session-stu" options="-parameters" />
+    </option>
+  </component>
+</project>

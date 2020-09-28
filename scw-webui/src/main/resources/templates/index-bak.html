@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<link href="/index" th:href="@{/static/css/login.css}">
+<div th:text="${hello}"></div><br>
+
+<div th:each="name:${user}" th:text="${name}"></div><br>
+
+<div th:each="name:${user}">[[${name}]]</div><br>
+<div>取值可以用th：text 代替标签内的text内容\[[${xxx.xxx}}]\] 或者直接用 来代替EL用法</div>
+
+
+<p>与EL表达式不同的是  当取session中对象的时候必须要${session.xxx}</p><br>
+<p>与EL表达式不同的是  当取application中对象的时候必须要${application.xxx}</p><br>
+<p>而request域中则不需要加任何东西</p><br>
+
+<script type="text/javascript" src="/js" th:src="@{/static/jquery/jquery-2.1.1.min.js}"></script>
+
+<script>
+  $(function (){
+
+    alert($)
+  })
+</script>
+
+</body>
+</html>
+
